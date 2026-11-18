@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Slide Out — Temple Trials</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<main id="homeScreen" class="screen home-screen active">
+  <div class="home-art" aria-hidden="true">
+    <svg viewBox="0 0 160 160" role="img">
+      <circle cx="80" cy="80" r="72" class="logo-ring"/>
+      <circle cx="80" cy="80" r="64" class="logo-inner-ring"/>
+      <path d="M37 112h86M44 103h72M51 103V72a29 29 0 0 1 58 0v31M45 70h70M56 70h48M59 103V77m21 26V77m21 26V77M35 119h90" class="logo-temple"/>
+      <path d="M80 27v18m-9-9h18M80 132v5m-8-2h16" class="logo-star"/>
+      <circle cx="80" cy="59" r="4" class="logo-gem"/>
+    </svg>
+  </div>
+  <span class="eyebrow">AN ANCIENT PUZZLE ADVENTURE</span>
+  <h1>Slide Out</h1>
+  <p class="home-sub">A path through the temple awaits.</p>
+  <button id="startGame" class="primary-button">Begin your journey <span aria-hidden="true">→</span></button>
+  <div class="home-foot"><span>20 handcrafted trials</span><i></i><span>4 ancient chambers</span></div>
+  <p id="homeProgress" class="home-progress"></p>
+</main>
+
+<main id="levelScreen" class="screen level-screen">
+  <header class="screen-heading">
+    <button id="levelsBack" class="back-button">← <span>Home</span></button>
+    <div><span class="eyebrow">YOUR ADVENTURE</span><h1>Choose a chamber</h1><p class="sub">Complete each trial to unlock the next.</p></div>
+    <div class="heading-spacer"></div>
+  </header>
+  <section class="map-progress" aria-label="Campaign progress">
+    <div><span>Temple progress</span><b id="mapProgressText">0 / 20 trials cleared</b></div>
+    <div class="progress" role="progressbar" aria-label="Trials cleared" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><div id="mapProgressFill"></div></div>
+  </section>
+  <div id="levelMap" class="chapter-map" aria-label="Level map"></div>
+</main>
+
+<main id="gameScreen" class="screen game-screen">
+  <header class="game-topbar">
+    <button id="gameBack" class="back-button">← <span>Chambers</span></button>
+    <span class="game-wordmark">SLIDE OUT <i>·</i> TEMPLE TRIALS</span>
+    <span class="heading-spacer"></span>
+  </header>
+  <section class="campaign" aria-label="Campaign progress">
+    <div class="chapterline"><span id="chapter">Courtyard · 1</span><span id="progressText">1 / 20</span></div>
+    <div id="gameProgress" class="progress" role="progressbar" aria-label="Campaign progress" aria-valuemin="1" aria-valuemax="20" aria-valuenow="1"><div id="progressFill"></div></div>
+  </section>
+  <div class="bar"><div class="stat"><b id="lv">1</b><span>Level</span></div><div class="stat"><b id="mv">0</b><span>Moves</span></div><div class="stat"><b id="par">0</b><span>Best possible</span></div></div>
+  <div id="wrap"><div id="board"></div></div>
+  <div class="btns"><button id="undo">↶ Undo</button><button id="reset">⟲ Restart</button></div>
+</main>
+<div id="ov"><div class="modal"><h2 id="mt">Level complete!</h2><div class="stars" id="st"></div><p id="mm"></p><button id="next">Next level →</button></div></div>
+<script src="script.js"></script>
+</body></html>
